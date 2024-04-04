@@ -22,7 +22,7 @@ public class Quiz1 {
 		
 		student1.showInfo();
 		student2.showInfo();
-		
+//		학생정보
 
 	}
 
