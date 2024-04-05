@@ -5,18 +5,11 @@ public class Ex1 {
 	public static void main(String[] args) {
 		
 		Student student = new Student("짱구", 10000);
-		
-		
 		Bus bus = new Bus(100);				//100번 버스 만든다
+		
 		student.takeBus(bus);				//학생이 100번 버스탄다
 		student.showInfo();					//그 이후 학생의 정보확인
 		bus.showInfo();						//이후 버스 정보확인
-		
-		
-		
-		
-		
-		
 
 	}
 
@@ -93,6 +86,15 @@ class Student {
 	public void takeSubway(Subway subway) {		//매개변수로 지하철 객체받음
 		subway.take(1500);				
 		this.money = this.money - 1500;		
+	}
+	
+	public void takeTaxi(Taxi taxi) {
+		if(money < 10000) {
+			System.out.println("소지금부족, 택시탈 수 없습니다.");
+			return;		//순서 맞지 않으면 택시를 먼저 타버리게된다.
+		}
+		taxi.take(10000);
+		this.money = this.money -10000;
 	}
 //	정보출력메소드
 	public void showInfo() {
